@@ -1,0 +1,40 @@
+@import '../../assets/fontawesome/css/all.min.css';
+
+$margin-left: 20px;
+
+div {
+  background-image: url('assets/images/Rajgad_Fort_near_Pune_India_2019_Bing_Wallpaper_1366x768.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  width: 240px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-areas: 'header icon'
+  'footer footer';
+  color: white;
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75), inset 0px 0px 120px 1px rgba(0,0,0,0.75);
+}
+
+h1, h3 {
+  grid-area: header;
+  margin-left: $margin-left;
+}
+
+h3 {
+  margin-top: 70px;
+}
+
+i {
+  grid-area: icon;
+  justify-self: end;
+  position: relative;
+  top: 20px;
+  right: $margin-left;
+}
+
+p {
+  grid-area: footer;
+  align-self: end;
+  margin-left: $margin-left;
+}
