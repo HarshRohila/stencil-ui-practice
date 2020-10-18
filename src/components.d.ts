@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface HomePage {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,8 +24,16 @@ export namespace Components {
     }
     interface PreviewCard {
     }
+    interface PreviewSlider {
+    }
 }
 declare global {
+    interface HTMLHomePageElement extends Components.HomePage, HTMLStencilElement {
+    }
+    var HTMLHomePageElement: {
+        prototype: HTMLHomePageElement;
+        new (): HTMLHomePageElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -36,12 +46,22 @@ declare global {
         prototype: HTMLPreviewCardElement;
         new (): HTMLPreviewCardElement;
     };
+    interface HTMLPreviewSliderElement extends Components.PreviewSlider, HTMLStencilElement {
+    }
+    var HTMLPreviewSliderElement: {
+        prototype: HTMLPreviewSliderElement;
+        new (): HTMLPreviewSliderElement;
+    };
     interface HTMLElementTagNameMap {
+        "home-page": HTMLHomePageElement;
         "my-component": HTMLMyComponentElement;
         "preview-card": HTMLPreviewCardElement;
+        "preview-slider": HTMLPreviewSliderElement;
     }
 }
 declare namespace LocalJSX {
+    interface HomePage {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -58,17 +78,23 @@ declare namespace LocalJSX {
     }
     interface PreviewCard {
     }
+    interface PreviewSlider {
+    }
     interface IntrinsicElements {
+        "home-page": HomePage;
         "my-component": MyComponent;
         "preview-card": PreviewCard;
+        "preview-slider": PreviewSlider;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "home-page": LocalJSX.HomePage & JSXBase.HTMLAttributes<HTMLHomePageElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "preview-card": LocalJSX.PreviewCard & JSXBase.HTMLAttributes<HTMLPreviewCardElement>;
+            "preview-slider": LocalJSX.PreviewSlider & JSXBase.HTMLAttributes<HTMLPreviewSliderElement>;
         }
     }
 }

@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'ui-practice',
+  globalStyle: 'src/globals/app.css',
   outputTargets: [
     {
       type: 'dist',

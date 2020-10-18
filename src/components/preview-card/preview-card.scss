@@ -6,8 +6,10 @@ div {
   background-image: url('assets/images/Rajgad_Fort_near_Pune_India_2019_Bing_Wallpaper_1366x768.jpg');
   background-position: center;
   background-size: cover;
-  height: 350px;
-  width: 240px;
+  height: 300px;
+  transform: var(--preview-card-transform, scale(0.8));
+  transition: transform 0.5s;
+  width: 200px;
   border-radius: 20px;
   display: grid;
   grid-template-areas: 'header icon'
